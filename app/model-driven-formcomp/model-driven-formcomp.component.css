@@ -1,0 +1,30 @@
+#s1{
+
+    color:blueviolet;
+}
+
+.table1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Helvetica, sans-serif;
+    border-collapse: collapse;
+    /* width: 100%; */
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  }
+  .table1 td, .table1 th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  .table1 tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  .table1 tr:hover {
+    background-color: #ddd;
+  }
+  
+  .table1 th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #051937 ;
+    color: white;
+  }
+  

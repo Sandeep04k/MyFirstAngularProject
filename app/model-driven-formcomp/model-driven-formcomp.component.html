@@ -1,0 +1,88 @@
+<!-- <div id ="s1">{{myInfo|json}}</div> -->
+
+
+<header class="bg-primary text-white">
+    <div class="container text-center">
+      <h1>Model Driven Forms</h1>
+    
+    </div>
+  </header><br>
+ <body>
+<div class='container'>
+  <div class="row">
+    <div class="col">
+ <!-- <form #userForm='ngForm' (ngSubmit)='submitData(userForm.value)'> -->
+ <form [formGroup] = "userForm" (ngSubmit)='submitData()' style="width: 70%; ">
+ 
+ <div class='form-group'>
+ <label>Name:</label> 
+ <input formControlName='name' class='form-control'> 
+
+ <div *ngIf="userForm.get('name').errors?.required && userForm.get('name').touched " class='text text-danger'>Name is required </div>
+ <div *ngIf="userForm.get('name').errors?.pattern" class='text text-danger'>Name should be valid and Name should be 5 to 15 characters </div> 
+ 
+
+ <label>Email:</label>
+ <input formControlName='email' class='form-control'> 
+
+ <div *ngIf="userForm.get('email').errors?.required && userForm.get('email').touched" class='text text-danger'>Email is required </div>
+ <div *ngIf="userForm.get('email').errors?.pattern" class='text text-danger'>Please Enter a valid Email</div> 
+ </div>
+ <div class='form-group' formGroupName="address">
+    
+    <label>State:</label>
+    <input formControlName='state' class='form-control'> 
+    <div *ngIf="userForm.get('address.state').errors?.required && userForm.get('address.state').touched" class='text text-danger'>State is Required </div>
+    <div *ngIf="userForm.get('address.state').errors?.pattern" class='text text-danger'>Please Enter a valid State</div> 
+  </div>
+
+    <div class='form-group' formGroupName="address">
+    <label>City:</label>
+    <input formControlName='city' class='form-control'> 
+    <div *ngIf="userForm.get('address.city').errors?.required && userForm.get('address.city').touched" class='text text-danger'>City is required </div>
+    <div *ngIf="userForm.get('address.city').errors?.pattern" class='text text-danger'>Please Enter a valid city</div> 
+    <div *ngIf="userForm.get('address.city').errors?.minlength" class='text text-danger'>Please Enter a valid city</div>
+    </div>
+
+<div class='form-group' formGroupName="address" >
+    <label>Postal Code:</label>
+    <input formControlName='postalcode' class='form-control'> 
+    <div *ngIf="userForm.get('address.postalcode').errors?.required && userForm.get('address.state').touched" class='text text-danger'>Postal Code is required </div>
+    <div *ngIf="userForm.get('address.postalcode').errors?.pattern" class='text text-danger'>Please Enter a valid postal code</div> 
+    <div *ngIf="userForm.get('address.postalcode').errors?.minlength" class='text text-danger'>The postal code should be 6 digits</div> 
+</div>
+
+ <button [disabled]='!userForm.valid' type='submit' class='btn btn-primary'>Submit</button>
+ 
+ </form>
+    </div>
+
+<div class="col"> 
+  <br>
+
+<table class="table1"   >
+ 
+  <tr *ngIf="myInfo.length>0;">
+    <th>Name</th>
+    <th>Email</th>
+    <th>State</th>
+    <th>City</th>
+    <th>Postal Code</th>
+   
+  </tr>
+ 
+  <tr *ngFor='let user of myInfo'>
+    <td>{{user.name}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.address.state}}</td>
+    <td>{{user.address.city}}</td>
+    <td>{{user.address.postalcode}}</td>
+  </tr>
+
+</table>
+
+</div>
+</div>
+
+</div>
+</body>

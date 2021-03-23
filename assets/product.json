@@ -1,0 +1,7 @@
+[
+    { "productID": 101,"productName": "Laptop", "productPrice":100000.5109, "prodDesc":"Dell", "productImg":"../assets/dell.png"},
+    { "productID": 102, "productName": "Mobile", "productPrice": 20000.67, "prodDesc": "Samsung", "productImg": "../assets/Samsung.jpg" },
+    { "productID": 103, "productName": "TV", "productPrice": 35000, "prodDesc": "MI", "productImg": "../assets/tv.jpg" },
+    { "productID": 104, "productName": "Camera", "productPrice": 25000.977, "prodDesc": "Sony","productImg": "../assets/camera.jpg" },
+    {"productID": 105, "productName": "HeadPhone", "productPrice": 1000.18, "prodDesc": "JBL", "productImg": "../assets/hp.jpg" }
+]

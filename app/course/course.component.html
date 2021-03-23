@@ -1,0 +1,51 @@
+<hr style="color: black;"><div id = "header">
+  <div class="row">
+    <div class="col">
+      <div class="info-header mb-5">
+        <h1 class="text pb-3">
+          Courses We Offer!!
+        </h1>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id = "s2" ></div>
+<div class = "s1">
+<select [(ngModel)]='SortbyParam'>
+  <option value="coursePrice">Price</option>
+  <option value="courseName">Name</option>
+  <option value="courseID">Course ID</option>
+</select>
+</div>
+
+<div class="wrap">
+  <div class="search">
+<input [(ngModel)]="searchText" placeholder="Search...." class="advancedSearchTextbox">
+
+</div>
+</div>
+
+
+<table class="table1"  >
+
+    <tr>
+    <th>Course ID</th>
+    <th>Course Name</th>
+    <th>Course Price</th>
+    <th>Course Description</th>    
+    <th>Trainer</th>
+    </tr>
+    
+    <tr *ngFor='let course of courses|searchpipe:{courseID: searchText, courseName:searchText,  courseDesc: searchText, coursePrice:searchText, courseTrainer:searchText}|sortpipe:[SortbyParam,SortDirection]' appMydirt>
+    <td>{{course.courseID}}</td>
+    <td>{{course.courseName}}</td>
+    <td>{{course.coursePrice}}</td>
+    <td>{{course.courseDesc}}</td>
+    <td appMydirt><img [src]='course.courseTrainer' height=60px width=60px/></td>
+  
+    </tr>
+    
+    </table>
+    <br>

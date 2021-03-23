@@ -1,0 +1,66 @@
+<header class="bg-primary text-white">
+  <div class="container text-center">
+    <h1>Template Driven Forms</h1>
+  
+  </div>
+</header><br>
+<div class='container'>
+    <form #userForm='ngForm' (ngSubmit)='submitData(userForm.value)' style="width: 50%; margin-left: 25%;">
+    
+    <div class='form-group'>
+    <label>Name:</label>
+    <input type='text' class='form-control' name='name' #nameRef='ngModel' 
+    ngModel required minlength='5' maxlength='12' pattern='[a-z, A-Z]+'>
+    
+    <div *ngIf='nameRef.errors && (nameRef.dirty || nameRef.touched)' class='alert alert-danger'>
+    
+    <div [hidden]='!nameRef.errors.required'>Please enter Name</div>
+    <div [hidden]='!nameRef.errors.minlength'>Please enter atleast 5 characters</div>
+    <div [hidden]='!nameRef.errors.pattern'>Please enter valid name</div> 
+    </div>
+
+    <label>Email:</label>
+    <input type='text' class='form-control' name='email' #emailRef='ngModel' 
+    ngModel required  pattern='[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+'>
+  
+
+    <div ngModelGroup="address" #addCtrl="ngModelGroup">
+      <label>State:</label>
+      <input type="text" name="state" minlength="5" class='form-control'
+             #stateRef='ngModel'  pattern='[a-z, A-Z]+' ngModel required>
+      <div *ngIf='stateRef.errors && (stateRef.dirty || stateRef.touched)' class='alert alert-danger'>
+        <div [hidden]='!stateRef.errors.required'>Please enter state</div>
+        <div [hidden]='!stateRef.errors.minlength'>Please enter atleast 5 characters</div>
+        <div [hidden]='!stateRef.errors.pattern'>Please enter valid state name</div>
+      </div>
+
+ 
+
+      <label>City:</label>
+      <input type="text" name="city" minlength="4" class='form-control'
+             #cityRef='ngModel' pattern='[a-z, A-Z]+' ngModel required >
+      <div *ngIf='cityRef.errors && (cityRef.dirty || cityRef.touched)' class='alert alert-danger'>
+        <div [hidden]='!cityRef.errors.required'>Please enter city</div>
+        <div [hidden]='!cityRef.errors.minlength'>Please enter at least 5 characters</div>
+        <div [hidden]='!cityRef.errors.pattern'>Please enter valid city</div>
+      </div>
+
+ 
+
+      <label>Postal Code:</label>
+      <input type="text" name="zip" minlength="6" maxlength ="6" class='form-control'
+             #zipRef='ngModel' pattern='[0-9]+' ngModel required>
+      <div *ngIf='zipRef.errors && (zipRef.dirty || zipRef.touched)' class='alert alert-danger'>
+        <div [hidden]='!zipRef.errors.required'>Please enter zip code</div>
+        <div [hidden]='!zipRef.errors.minlength'>Please enter atleast 6 digits</div>
+        <div [hidden]='!zipRef.errors.pattern'>Please enter valid postal code</div>
+      </div>
+
+    </div><br>
+    
+    <div><button [disabled]='!userForm.form.valid' type='submit' class='btn btn-primary'>Submit</button></div>
+    
+  
+   </div>
+    </form>
+  </div>

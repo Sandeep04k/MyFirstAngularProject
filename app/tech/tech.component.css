@@ -1,0 +1,16 @@
+#gallery .card:hover {
+    background: #3292a6;
+    color: #fff;
+    
+  }
+#tech1{
+    margin-top: 140px;
+   
+  }
+#header{
+    text-align: center;
+    color:#3292a6
+}
+#link{
+    color:white;
+}

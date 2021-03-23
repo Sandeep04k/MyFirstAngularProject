@@ -1,0 +1,72 @@
+<div class='container'>
+
+    <div id = "header">
+        <div class="row">
+          <div class="col">
+            <div class="info-header mb-5">
+              <h1 class="text pb-3">                  
+                Login with Mizuxe!
+              </h1>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+<div class="card col-lg-4 bg-light py-2 " id = "c1">
+
+    <h2 class = "card-title text-center mt-2"  >
+        <img
+        src="../assets/mlogo.png" 
+        alt=""
+        class="img-fluid rounded-circle w-25 mb-3"
+      />
+        Login Now
+    </h2>
+    <h5 class = "card-subtitle text-danger text-center">{{authenticate}}</h5>
+
+<article class="card-body mx-auto" style="width:50;">
+
+
+
+        <form [formGroup] = "userForm" (ngSubmit)='submitData(userForm.value)' >
+    <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-danger text-white"> <i class="fa fa-user"></i> </span>
+         </div>
+        <input formControlName='name' name='name' class='form-control bg-dark text-white' placeholder="Username" >
+
+        <div *ngIf="userForm.get('name').errors?.required && userForm.get('name').touched " class='text text-danger'>Name is required </div>
+
+    </div> <!-- form-group// -->
+
+    <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-danger text-white"> <i class="fa fa-envelope"></i> </span>
+         </div>
+        <input formControlName="email" class="form-control bg-dark text-white" placeholder="Email address" type="email">
+
+        <div *ngIf="userForm.get('email').errors?.required && userForm.get('email').touched" class='text text-danger'>Email is required </div>
+
+    </div> <!-- form-group// -->
+
+    
+    
+    <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-danger text-white"> <i class="fa fa-lock"></i> </span>
+        </div>
+        <input formControlName="password" name = "password" class="form-control bg-dark text-white" placeholder="Password" type="password">
+
+        <div *ngIf="userForm.get('password').errors?.required && userForm.get('password').touched" class='text text-danger'>Password is required </div>
+      
+    </div> <!-- form-group// -->
+                                     
+    <div><button  type='submit' class='btn btn-outline-danger '>Submit</button></div>
+                                                                 
+</form>
+</article>
+</div>
+<br> <!-- card.// -->
+</div>

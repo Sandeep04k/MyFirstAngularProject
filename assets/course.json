@@ -1,0 +1,7 @@
+[
+    { "courseID": 101,"courseName": "Java", "coursePrice":1000, "courseDesc":"Introduction to JAVA", "courseTrainer":"../assets/person1.jpg"},
+    { "courseID": 102, "courseName": "Python", "coursePrice": 1596.67, "courseDesc": "Intermediate Python", "courseTrainer":"../assets/person2.jpg" },
+    { "courseID": 103, "courseName": "Machine Learning", "coursePrice": 3500, "courseDesc": "Hands on ML", "courseTrainer": "../assets/person3.jpg" },
+    { "courseID": 104, "courseName": "React", "coursePrice": 900.97, "courseDesc": "Introduction to REACTJS","courseTrainer": "../assets/person4.jpg" },
+    {"courseID": 105, "courseName": "Javascript", "coursePrice": 1000.18, "courseDesc": "Basics of JavaScript", "courseTrainer": "../assets/person5.jpeg" }
+]

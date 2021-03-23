@@ -1,0 +1,74 @@
+<!-- <nav>
+  <a routerLink='/home' routerLinkActive='active'>Home</a>
+  <a routerLink='/review' routerLinkActive='active'>Review</a>
+  <a routerLink='/tech' routerLinkActive='active'>Technologies</a> 
+  <a routerLink='temp-driven-formcomp' routerLinkActive='active'>Registration</a>
+  <a routerLink='model-driven-formcomp' routerLinkActive='active'>Contact Us</a>
+    <div id="indicator"></div>
+  </nav> -->
+
+  <!-- <nav id = "home1">
+    <a routerLink='/home' routerLinkActive='active'>Home</a>
+    <a routerLink='/productcomp' routerLinkActive='active'>Product Details</a>  
+    <a routerLink='/empdetails' routerLinkActive='active'>Employee Details</a>
+    <a routerLink='/java' routerLinkActive='active'>Java Technologies</a> 
+    <a routerLink='/web' routerLinkActive='active'>Web Technologies</a>
+    <a routerLink='temp-driven-formcomp' routerLinkActive='active'>Forms</a>
+    <a routerLink='model-driven-formcomp' routerLinkActive='active'>MForm</a>
+  
+   </nav>  -->
+  
+   <nav
+      class="navbar navbar-expand-md navbar-light fixed-top py-4"
+      id="main-nav"
+    >
+      <div class="container">
+        <a href="/home" class="navbar-brand">
+          <img src="../assets/mlogo.png" width="50" height="50" alt="" />
+          <h3 class="d-inline align-middle">{{'Mizuxe'|translate}}</h3>
+        </a>
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              
+              <a routerLink='/home' routerLinkActive='active' class="nav-link">{{'Home'|translate}}</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink='/review' routerLinkActive='active' class="nav-link">{{'Review'|translate}}</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink='/tech' routerLinkActive='active' class="nav-link">{{'Technology'|translate}}</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink='/contact' routerLinkActive='active' class="nav-link">{{'Registration'|translate}}</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink='/registration' routerLinkActive='active' class="nav-link">{{'Contact'|translate}}</a>
+            </li>
+            <li class="nav-item">
+              <i class="fa fa-globe p-2" aria-hidden="true"></i>
+              <select class ="optionbox" #locale (change)="changeLocale(locale.value)">
+                <option selected=""> Select Language</option>
+                <option value="en">English</option>
+                <option value="fr">French</option>
+                <option value="hi">Hindi</option>
+                <option value="ar">Arabic</option>
+
+              </select>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-outline-danger" href="/login" role="button" id ="b1">Logout</a>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+    

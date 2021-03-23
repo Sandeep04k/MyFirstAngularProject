@@ -1,0 +1,7 @@
+[
+    { "reviewID": 101,"reviewerName": "Rahul", "reviewDesc":"Angular Course is superb", "reviewImg":"../assets/p1.png"},
+    { "reviewID": 102, "reviewerName": "Ankit",  "reviewDesc": "All the courses are well organized and are in detail", "reviewImg": "../assets/p2.jpg" },
+    { "reviewID": 103, "reviewerName": "Shubham", "reviewDesc": "Learned many things from these course", "reviewImg": "../assets/p3.jpg" },
+    { "reviewID": 104, "reviewerName": "Rohan",  "reviewDesc": "So far great!!","reviewImg": "../assets/p4.jpg" },
+    {"reviewID": 105, "reviewerName": "Rohit",  "reviewDesc": "Keep adding more courses", "reviewImg": "../assets/p5.jpg" }
+]

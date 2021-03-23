@@ -1,0 +1,100 @@
+<app-header></app-header>
+
+    <div id = "tech1">
+<div id = "header">
+      <div class="row">
+        <div class="col">
+          <div class="info-header mb-5">
+            <h1 class="text pb-3">
+              Stay Updated with the new Technologies!
+            </h1>
+            <p class="lead">
+             Learn More ! Grow More!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <section id="gallery">
+    <div class="container">
+      <div class="row">
+      <div class="col-lg-4 mb-4 ">
+      <div class="card p-4" >
+        <img src="../assets/courses.jpg" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Courses</h5>
+          <p class="card-text" style="text-align: justify;">There are many courses available for you to grow more. Some of the 
+            few listed are Angular, React, Machine Learning, Python, Javascript. Each course helps you to learn and develop more.
+            These helps you in the technical development, these courses helps you to understand from the basics and give hands on training.
+
+          </p>
+          <div class="d-flex justify-content-center">
+            <div class = "p-1">
+          <a id = "link" [routerLink]='["course"]'  class="btn btn-sm btn-dark "><i class="fa fa-book"></i></a></div>
+          <div class = "p-1">
+          <a href="#" class="btn btn-outline-dark btn-sm"><i class="far fa-heart"></i></a></div></div>
+        
+        </div>
+       </div>
+      </div>
+
+      <!-- <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <img
+                src="../assets/java.jpg"
+                alt=""
+                class="img-fluid rounded-circle w-50 mb-3"
+              />
+              <h3>Susan Williams</h3>
+              <h5 class="text-muted">Lead Writer</h5>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+                commodi nostrum, ab libero voluptas officia.
+              </p>
+            </div>
+          </div>
+        </div> -->
+
+    <div class="col-lg-4 mb-4">
+    <div class="card p-4">
+        <img src="../assets/web.png" alt="" class="card-img-top" style="height:232px;">
+        <div class="card-body">
+          <h5 class="card-title">Angular</h5>
+          <p class="card-text" style="text-align: justify;">Angular is a platform and framework for building 
+            single-page client applications using HTML and TypeScript. 
+            Angular is written in TypeScript. It implements core and optional functionality
+             as a set of TypeScript libraries that you import into your apps.</p>
+             <div class="d-flex justify-content-center">
+             <div class = "p-1">
+         <a id = "link" [routerLink]='["angular"]' class="btn btn-sm btn-danger "><i class="fa fa-book"></i></a></div>
+         <div class = "p-1">
+          <a href="" class="btn btn-outline-danger btn-sm "><i class="far fa-heart"></i></a></div></div>
+        </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+      <div class="card p-4">
+        <img src="../assets/python.jpg" alt="" class="card-img-top"  style="height:232px;">
+        <div class="card-body">
+          <h5 class="card-title" >Python</h5>
+          <p class="card-text" style="text-align: justify;">Python is developed by Guido van Rossum. 
+            Guido van Rossum started implementing Python in 1989. 
+            Python is a very simple programming language so even if you are new to programming, 
+            you can learn python without facing any issues.</p>
+            <div class="d-flex justify-content-center">
+              <div class = "p-1">
+         <a id = "link" [routerLink]='["python"]' class="btn btn-sm btn-warning "><i class="fa fa-book"></i></a></div>
+         <div class = "p-1">
+          <a href="" class="btn btn-outline-warning btn-sm"><i class="far fa-heart"></i></a></div></div>
+        </div>
+       </div>
+      </div>
+    </div>
+  </div>
+  </section>
+</div>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

@@ -1,0 +1,56 @@
+<div><h1>Employee Details</h1></div>
+
+
+<div id = "s2" ><h4>Sort :</h4></div>
+<div class = "s1">
+   
+    <select [(ngModel)]='SortbyParam' >
+     
+      <option value="id">Employee ID</option>
+      <option value="name">Employee Name</option>
+      <option value="city">City</option>
+  
+    </select>
+</div>
+
+
+  <div class="wrap">
+      <div class="search">
+    <input [(ngModel)]="searchText" placeholder="Search...." class="advancedSearchTextbox">
+    
+    </div>
+    </div>
+
+
+<table class="table1">
+    <tr>
+        <th>
+            Employee ID
+        </th>
+        <th>
+            Employee Name
+        </th>
+        <th>
+            Employee E-Mail
+        </th>
+        <th>
+            Employee Salary
+        </th>
+        <th>
+            Employee City
+        </th>
+        <th>
+            Employee Images
+        </th>
+    </tr>
+
+<tr *ngFor='let employee of employees|searchpipe:{id: searchText, name:searchText, salary:searchText, city:searchText}|sortpipe:[SortbyParam,SortDirection]' appMydirt>
+    <td>{{employee.id}}</td>
+    <td>{{employee.name}}</td>
+    <td>{{employee.email}}</td>
+    <td>{{employee.salary}}</td>
+    <td>{{employee.city}}</td>
+    <td appMydirt><img [src]='employee.empImg' height=50px width=50px/></td>
+</tr>
+
+</table>

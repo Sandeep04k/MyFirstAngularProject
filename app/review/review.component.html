@@ -1,0 +1,59 @@
+<app-header></app-header>
+<div id = "rev">
+  <div id = "header">
+    <div class="row">
+      <div class="col">
+        <div class="info-header mb-5">
+          <h1 class="text pb-3">
+            REVIEWS
+          </h1>
+          <p class="lead">
+These are some of the reviews provided by our students........
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+<div id = "s2" ></div>
+<div class = "s1">
+<select [(ngModel)]='SortbyParam'>
+  
+  <option value="reviewerName">Name</option>
+  <option value="reviewID">Review ID</option>
+</select>
+</div>
+
+<div class="wrap">
+  <div class="search">
+<input [(ngModel)]="searchText" placeholder="Search...." class="advancedSearchTextbox">
+
+</div>
+</div>
+
+
+<table class="table1"  >
+
+<tr>
+<th>Review ID</th>
+<th>Name</th>
+
+<th>Review Description</th>
+
+<th>Reviewer Image</th>
+</tr>
+
+<tr *ngFor='let review of reviews|searchpipe:{reviewID: searchText, reviewerName:searchText,  reviewDesc: searchText}|sortpipe:[SortbyParam,SortDirection]' appMydirt>
+<td>{{review.reviewID}}</td>
+<td>{{review.reviewerName}}</td>
+
+<td>{{review.reviewDesc}}</td>
+
+<td appMydirt><img [src]='review.reviewImg' height=50px width=50px/></td>
+
+
+</tr>
+
+</table>
+</div>
+<br>
+<app-footer></app-footer>

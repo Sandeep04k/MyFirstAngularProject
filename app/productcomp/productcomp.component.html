@@ -1,0 +1,44 @@
+<div><h1>Product Details</h1></div>
+ 
+        <div id = "s2" ><h5>Sort :</h5></div>
+         <div class = "s1">
+         <select [(ngModel)]='SortbyParam'>
+           <option value="productPrice">Price</option>
+           <option value="productName">Name</option>
+           <option value="productID">Product ID</option>
+         </select>
+       </div>
+       
+       <div class="wrap">
+           <div class="search">
+         <input [(ngModel)]="searchText" placeholder="Search...." class="advancedSearchTextbox">
+         
+         </div>
+         </div>
+
+  
+  <table class="table1"  >
+    
+      <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Product Description</th>
+        <th>Sale Date</th>
+        <th>Product Image</th>
+      </tr>
+     
+      <tr *ngFor='let product of products|searchpipe:{productID: searchText, productName:searchText,  prodDesc: searchText, productPrice:searchText}|sortpipe:[SortbyParam,SortDirection]' appMydirt >
+        <td>{{product.productID}}</td>
+        <td>{{product.productName}}</td>
+        <td>{{product.productPrice|number:'.0-2'}}</td>
+        <td>{{product.prodDesc}}</td>
+        <td>{{saleDate|date:"fullDate"}}</td>
+        <td appMydirt><img [src]='product.productImg' height=50px width=50px/></td>
+     
+    
+      </tr>
+  
+    </table>
+
+  
